@@ -1,0 +1,38 @@
+#include<iostream>
+using namespace std;
+
+int main() {    
+   int i;  
+   string pin;  
+   
+   
+   cout << "==========================================\n";    
+   cout << "         SELAMAT DATANG DI ATM INI \n";    
+   cout << "==========================================\n";  
+   
+   string benar = "1234";    
+   string input = "block";    
+   i = 1;    
+   do {               
+       cout << "Masukkan pin anda = "; cin>>pin;        
+       if (pin == benar) { 
+           cout << endl ;
+           cout << "PIN YANG ANDA MASUKAN BENAR" << endl;      
+           i = 4;
+           input = "berhasil";        } 
+       else {                 
+           cout << "PIN YANG ANDA MASUKAN SALAH ("<<i<<"x)\n";
+		       cout << "=============================\n\n";            
+           i = i +1;
+       }   
+    } while (i <= 3);
+	
+    if(input != "berhasil"){
+       cout<<" ANDA TELAH 3x SALAH PIN.\n";       
+       cout<<" KARTU ANDA TELAH DI BLOKIR SILAHKAN HUBUNGI BANK TERDEKAT..\n\n";      
+	}   
+   return 0;
+
+
+}
+
