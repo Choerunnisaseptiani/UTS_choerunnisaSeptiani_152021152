@@ -1,0 +1,152 @@
+#include<iostream>
+using namespace std ;
+   
+int main() {
+  int menu;
+
+  cout << "Masukkan Menu yang anda inginkan (1,2,3) : ";
+  cout <<"\n";
+  cin >> menu ;;
+  if (menu == 1){
+
+  cout<< "MENGHITUNG BANYAK PERMEN \n\n";
+  string nama1, nama2, nama3;
+  int nilai1, nilai2, nilai3, jarak1, jarak2;
+
+  cout << "Masukan nama anak ke -1 : ";
+  cin >> nama1;
+  cout << "Banyak permen anak ke - 1 : ";
+  cin >> nilai1;
+  cout << "Masukan nama anak ke -2 : ";
+  cin >> nama2;
+  cout << "Banyak permen anak ke - 2 : ";
+  cin >> nilai2;
+  cout << "Masukan nama anak ke -3 : ";
+  cin >> nama3;
+  cout << "Banyak permen anak ke - 1 : ";
+  cin >> nilai3;
+
+
+  if (nilai1 == nilai2 && nilai1 == nilai3) {
+    cout << "Banyakk permen  " << nama1 << ", " << nama2 << ", " << nama3
+         << " bernilai sama";
+  }
+
+  else if (nilai1 == nilai2 && nilai1 > nilai3) {
+    cout << "Banyak Permen " << nama1 << " dan " << nama2 << " bernilai sama" << endl;
+    jarak1 = nilai1 - nilai3;
+    cout << "Jarak Banyak permen antara " << nama1 << " dan " << nama2 << " dengan "
+         << nama3 << " adalah : " << jarak1;
+  }
+
+  else if (nilai1 == nilai3 && nilai1 > nilai2) {
+    cout << "Banyak permen " << nama1 << " dan " << nama3 << " bernilai sama" << endl;
+    jarak1 = nilai1 - nilai2;
+    cout << "Jarak banyak antara " << nama1 << " dan " << nama3 << " dengan "
+         << nama2 << " adalah : " << jarak1;
+  }
+
+  else if (nilai2 == nilai3 && nilai2 > nilai1) {
+    cout << "Banyak permen " << nama2 << " dan " << nama3 << " bernilai sama" << endl;
+    jarak1 = nilai2 - nilai1;
+    cout << "Jarak banyaj permen antara " << nama2 << " dan " << nama3 << " dengan "
+         << nama1 << " adalah : " << jarak1;
+  }
+
+  else if (nilai1 > nilai2 && nilai1 > nilai3) {
+    cout << nama1 << " memiliki permen terbanyak" << endl;
+    jarak1 = nilai1 - nilai2;
+    jarak2 = nilai1 - nilai3;
+    cout << "Jarak banyak permen antara " << nama1 << " dengan " << nama2
+         << " adalah : " << jarak1 << endl;
+    cout << "Jarak banyak permen antara " << nama1 << " dengan " << nama3
+         << " adalah : " << jarak2 << endl;
+  } else if (nilai2 > nilai3 && nilai2 > nilai1) {
+    cout << nama2 << " memiliki permen terbanyak" << endl;
+    jarak1 = nilai2 - nilai1;
+    jarak2 = nilai2 - nilai3;
+    cout << "Jarak banyak permen antara " << nama2 << " dengan " << nama1
+         << " adalah : " << jarak1 << endl;
+    cout << "Jarak banyak permen antara " << nama2 << " dengan " << nama3
+         << " adalah : " << jarak2 << endl;
+  } else {
+    cout << nama3 << " memiliki permen terbanyak" << endl;
+    jarak1 = nilai3 - nilai1;
+    jarak2 = nilai3 - nilai2;
+    cout << "Jarak banyak Permen antara " << nama3 << " dengan " << nama1
+         << " adalah : " << jarak1 << endl;
+    cout << "Jarak Permen antara " << nama3 << " dengan " << nama2
+         << " adalah : " << jarak2 << endl;
+  } 
+  }
+  if (menu == 2){
+     int i;  
+   string pin;  
+   
+   
+   cout << "==========================================\n";    
+   cout << "         SELAMAT DATANG DI ATM INI \n";    
+   cout << "==========================================\n";  
+   
+   string benar = "1234";    
+   string input = "block";    
+   i = 1;    
+   do {               
+       cout << "Masukkan pin anda = "; cin>>pin;        
+       if (pin == benar) { 
+           cout << endl ;
+           cout << "PIN YANG ANDA MASUKAN BENAR" << endl;      
+           i = 4;
+           input = "berhasil";        } 
+       else {                 
+           cout << "PIN YANG ANDA MASUKAN SALAH ("<<i<<"x)\n";
+		       cout << "=============================\n\n";            
+           i = i +1;
+       }   
+    } while (i <= 3);
+	
+    if(input != "berhasil"){
+       cout<<" ANDA TELAH 3x SALAH PIN.\n";       
+       cout<<" KARTU ANDA TELAH DI BLOKIR SILAHKAN HUBUNGI BANK TERDEKAT..\n\n";      
+	}   
+   return 0;
+
+  }
+  else {
+  
+ int banyak,jam,i;
+ double total,bayar,diskon,harga[100];
+  
+  cout << "      =============================================== \n\n";
+  cout << "              SELAMAT DATANG DI WARUNG BU SALEH \n\n       ";
+  cout << "=============================================== \n\n";
+
+  
+  cout << "Banyak belanjaan : ";
+  cin >> banyak ;
+
+  for (i=1 ; i <= banyak ; i++ ){
+    cout<< "Masukan Harga barang ke - " << i << " : ";
+    cin >> harga[i] ;
+  }
+  for (i=1 ; i <= banyak ; i++){
+    total = harga[1] + harga[i++];
+  }
+  cout << "Jam belanja : ";
+  cin >> jam ;
+  if (jam >= 1300 && jam <= 1459  ){
+    
+    diskon = total*0.2 ;
+    bayar = total - diskon ;
+    cout << "Total yang harus anda bayar : " << bayar ;
+  }
+    else {
+    cout << "Total yang harus anda bayar : " << total ;  
+    }
+  
+
+  }
+    
+       
+      
+}
