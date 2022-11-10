@@ -1,0 +1,73 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+  string nama1, nama2, nama3;
+  int nilai1, nilai2, nilai3, jarak1, jarak2;
+
+  cout << "Masukan nama anak ke -1 : ";
+  cin >> nama1;
+  cout << "Banyak permen anak ke - 1 : ";
+  cin >> nilai1;
+  cout << "Masukan nama anak ke -2 : ";
+  cin >> nama2;
+  cout << "Banyak permen anak ke - 2 : ";
+  cin >> nilai2;
+  cout << "Masukan nama anak ke -3 : ";
+  cin >> nama3;
+  cout << "Banyak permen anak ke - 3 : ";
+  cin >> nilai3;
+
+
+  if (nilai1 == nilai2 && nilai1 == nilai3) {
+    cout << "Banyakk permen  " << nama1 << ", " << nama2 << ", " << nama3
+         << " bernilai sama";
+  }
+
+  else if (nilai1 == nilai2 && nilai1 > nilai3) {
+    cout << "Banyak Permen " << nama1 << " dan " << nama2 << " bernilai sama" << endl;
+    jarak1 = nilai1 - nilai3;
+    cout << "Jarak Banyak permen antara " << nama1 << " dan " << nama2 << " dengan "
+         << nama3 << " adalah : " << jarak1;
+  }
+
+  else if (nilai1 == nilai3 && nilai1 > nilai2) {
+    cout << "Banyak permen " << nama1 << " dan " << nama3 << " bernilai sama" << endl;
+    jarak1 = nilai1 - nilai2;
+    cout << "Jarak banyak antara " << nama1 << " dan " << nama3 << " dengan "
+         << nama2 << " adalah : " << jarak1;
+  }
+
+  else if (nilai2 == nilai3 && nilai2 > nilai1) {
+    cout << "Banyak permen " << nama2 << " dan " << nama3 << " bernilai sama" << endl;
+    jarak1 = nilai2 - nilai1;
+    cout << "Jarak banyaj permen antara " << nama2 << " dan " << nama3 << " dengan "
+         << nama1 << " adalah : " << jarak1;
+  }
+
+  else if (nilai1 > nilai2 && nilai1 > nilai3) {
+    cout << nama1 << " memiliki permen terbanyak" << endl;
+    jarak1 = nilai1 - nilai2;
+    jarak2 = nilai1 - nilai3;
+    cout << "Jarak banyak permen antara " << nama1 << " dengan " << nama2
+         << " adalah : " << jarak1 << endl;
+    cout << "Jarak banyak permen antara " << nama1 << " dengan " << nama3
+         << " adalah : " << jarak2 << endl;
+  } else if (nilai2 > nilai3 && nilai2 > nilai1) {
+    cout << nama2 << " memiliki permen terbanyak" << endl;
+    jarak1 = nilai2 - nilai1;
+    jarak2 = nilai2 - nilai3;
+    cout << "Jarak banyak permen antara " << nama2 << " dengan " << nama1
+         << " adalah : " << jarak1 << endl;
+    cout << "Jarak banyak permen antara " << nama2 << " dengan " << nama3
+         << " adalah : " << jarak2 << endl;
+  } else {
+    cout << nama3 << " memiliki permen terbanyak" << endl;
+    jarak1 = nilai3 - nilai1;
+    jarak2 = nilai3 - nilai2;
+    cout << "Jarak banyak Permen antara " << nama3 << " dengan " << nama1
+         << " adalah : " << jarak1 << endl;
+    cout << "Jarak Permen antara " << nama3 << " dengan " << nama2
+         << " adalah : " << jarak2 << endl;
+  }
+}
