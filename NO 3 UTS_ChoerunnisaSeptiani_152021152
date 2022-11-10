@@ -1,0 +1,35 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+ int banyak,jam,i;
+ double total,bayar,diskon,harga[100];
+  
+  cout << "      =============================================== \n\n";
+  cout << "              SELAMAT DATANG DI WARUNG BU SALEH \n\n       ";
+  cout << "=============================================== \n\n";
+
+  
+  cout << "Banyak belanjaan : ";
+  cin >> banyak ;
+
+  for (i=1 ; i <= banyak ; i++ ){
+    cout<< "Masukan Harga barang ke - " << i << " : ";
+    cin >> harga[i] ;
+  }
+  for (i=1 ; i <= banyak ; i++){
+    total = harga[1] + harga[i++];
+  }
+  cout << "Jam belanja : ";
+  cin >> jam ;
+  if (jam >= 1300 && jam <= 1459  ){
+    
+    diskon = total*0.2 ;
+    bayar = total - diskon ;
+    cout << "Total yang harus anda bayar : " << bayar ;
+  }
+    else {
+    cout << "Total yang harus anda bayar : " << total ;  
+    }
+  
+}
